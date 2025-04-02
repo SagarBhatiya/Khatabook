@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Khaatabook</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Include a CSS file if needed -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        a{
+            color: black;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 250px;
+        }
+        .date {
+            flex-grow: 1;
+        }
+        .icons {
+            display: flex;
+            gap: 10px;
+        }
+        .icons a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>hey</h1>
+
+    <h1>Khaatabook</h1>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/create">Create New Hisaab</a>
+    </div>
+
+    <div class="container">
+        <h2>All Hisaab Kittaab</h2>
+        <div class="card">
+            <span class="date">12-04-2024</span>
+            <a href="#"><i class="fas fa-arrow-right"></i></a>
+            <div class="icons">
+                <a href="#"><i class="fas fa-edit"></i></a>
+                <a href="#"><i class="fas fa-trash"></i></a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

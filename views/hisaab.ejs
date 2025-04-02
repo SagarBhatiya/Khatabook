@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaatabook</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- External CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a{
+            color:black
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .date {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .edit {
+            color: gray;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Khaatabook</h1>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/create">Create New Hisaab</a>
+    </div>
+
+    <div class="container">
+        <h2>Hisaab of <span class="date">12-08-2024</span> date</h2>
+        <p>aata, daal cheeni, masoor ki daal</p>
+        <p class="edit"><a href="#">edit this hisaab</a></p>
+    </div>
+
+</body>
+</html>
