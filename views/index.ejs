@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khaatabook</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- Include a CSS file if needed -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Include a CSS file if needed -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FontAwesome for icons -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        a{
-            color: black;
-        }
-        .container {
-            margin-top: 20px;
-        }
-        .card {
-            display: flex;
-            align-items: center;
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-            width: 250px;
-        }
-        .date {
-            flex-grow: 1;
-        }
-        .icons {
-            display: flex;
-            gap: 10px;
-        }
-        .icons a {
-            color: white;
-            text-decoration: none;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h3 {
+        color: gray;
+      }
+      .navbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      a {
+        color: black;
+      }
+      .container {
+        margin-top: 20px;
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 250px;
+        margin-bottom: 6px;
+        gap: 50px;
+      }
+      .date {
+        flex-grow: 1;
+      }
+      .icons {
+        display: flex;
+        gap: 20px;
+      }
+      .icons a {
+        color: white;
+        text-decoration: none;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>Khaatabook</h1>
     <div class="navbar">
-        <a href="/">Home</a>
-        <a href="/create">Create New Hisaab</a>
+      <a href="/">Home</a>
+      <a href="/create">Create New Hisaab</a>
     </div>
 
     <div class="container">
-        <h2>All Hisaab Kittaab</h2>
-        <div class="card">
-            <span class="date">12-04-2024</span>
-            <a href="#"><i class="fas fa-arrow-right"></i></a>
-            <div class="icons">
-                <a href="#"><i class="fas fa-edit"></i></a>
-                <a href="#"><i class="fas fa-trash"></i></a>
-            </div>
-        </div>
-    </div>
+      <h2>All Hisaab Kitaab</h2>
+      <% if(files.length>0){ %> <% files.forEach(file => { %>
 
-</body>
+      <div class="card">
+        <span class="date"><%= file%></span>
+        <a href="/hisaab/<%= file %>"><i class="fas fa-arrow-right"></i></a>
+        <div class="icons">
+          <a href="/edit/<%=file%>"><i class="fas fa-edit"></i></a>
+          <a href="/delete/<%=file%>"><i class="fas fa-trash"></i></a>
+        </div>
+      </div>
+      <% }); %> <%}else{%>
+      <h3>Currently nothing to show, create hisaabs to see somthing</h3>
+      <% } %>
+    </div>
+  </body>
 </html>
