@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
-app.set("view engine", "ejs");
 const path = require("path");
+const connectmongoose = require("./config/mongoose");
+
+app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -57,9 +59,8 @@ app.post("/update/:filename", function (req, res) {
 
 app.post("/createhisaab", function (req, res) {
   var date = new Date();
-  var filename = `${date.getDate()}-${
-    date.getMonth() + 1
-  }-${date.getFullYear()}_${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
+  var filename = `${date.getDate()}-${date.getMonth() + 1
+    }-${date.getFullYear()}_${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
   fs.writeFile(`./hisaab/${filename}`, req.body.content, function (err) {
     if (err) return res.status(500).send(err);
     res.redirect("/");
